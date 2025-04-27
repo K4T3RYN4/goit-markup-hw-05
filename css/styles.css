@@ -689,7 +689,7 @@ textarea {
     transform: translate(-50%, -50%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    padding: 24px;
+    padding: 72px 24px 24px;
 }
 
 .backdrop:not(.is-open) .modal {
@@ -698,16 +698,39 @@ textarea {
 
 .exit-btn {
     display: block;
-    border-radius: 100%;
+    border-radius: 50%;
     background-color: var(--cornflower);
     border: 1px solid rgba(0, 0, 0, 0.1);
     width: 24px;
     height: 24px;
     cursor: pointer;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     position: absolute;
     top: 24px;
     right: 24px;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.exit-btn:hover,
+.exit-btn:focus {
+    border: none;
+    background-color: var(--ocean);
+}
+
+.exit-btn:hover .exit-icon,
+.exit-btn:focus .exit-icon {
+    fill: var(--white);
+}
+
+.exit-icon {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-header {
@@ -718,17 +741,20 @@ textarea {
     text-align: center;
     color: var(--navy-blue);
 
-    margin-top: 48px;
     margin-bottom: 16px;
+}
+
+.input-area-wrapper {
+    margin-bottom: 8px;
 }
 
 .modal-label {
     font-weight: 400;
     font-size: 12px;
-    line-height: 1.16667;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: var(--light-slate);
-    display: inline-block;
+    display: block;
 
     margin-bottom: 4px;
 }
@@ -746,9 +772,7 @@ textarea {
     width: 100%;
     height: 40px;
 
-    display: flex;
-    justify-content:space-between;
-    gap: 4px;
+    position: relative;
 
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -760,9 +784,13 @@ textarea {
 
 .modal-icon {
     fill: var(--navy-blue);
-    margin: 8px 0 8px 16px;
 
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    fill: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-icon:focus,
