@@ -781,7 +781,7 @@ textarea {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-input:focus .modal-icon {
+.modal-input:focus + .modal-icon {
     fill: var(--iris);
 }
 
@@ -815,8 +815,6 @@ textarea {
     font-size: 12px;
     letter-spacing: 0.04em;
     color: rgba(46, 47, 66, 0.4);
-    border: 1px solid rgba(46, 47, 66, 0.4);
-    border-radius: 4px;
     background-color: transparent;
     padding: 8px 16px;
 
