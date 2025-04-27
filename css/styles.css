@@ -59,7 +59,7 @@ a {
 
 input,
 textarea {
-    outline: none;
+    outline: transparent;
     background: none;
     border: none;
 }
@@ -760,26 +760,14 @@ textarea {
 }
 
 .modal-accent {
-    line-height: 1.33333;
+    line-height: 1.4;
     text-decoration: underline;
     text-decoration-skip-ink: none;
     color: var(--iris);
 }
 
 .input-wrapper {
-    border: 1px solid var(--navy-blue-modal);
-    border-radius: 4px;
-    width: 100%;
-    height: 40px;
-
     position: relative;
-
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.input-wrapper:focus,
-.input-wrapper:hover {
-    border: 1px solid var(--ocean);
 }
 
 .modal-icon {
@@ -790,16 +778,29 @@ textarea {
     top: 50%;
     transform: translateY(-50%);
 
-    fill: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-icon:focus,
-.modal-icon:hover {
-    fill: var();
+.modal-input:focus .modal-icon {
+    fill: var(--iris);
 }
 
 .modal-input {
+    height: 40px;
     width: 100%;
+    border: 1px solid var(--navy-blue-modal);
+    border-radius: 4px;
+    padding-left: 38px;
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:focus {
+    border-color: var(--iris);
+}
+
+.comment-area-wrapper {
+    margin-bottom: 16px;
 }
 
 .comment-input {
@@ -809,27 +810,40 @@ textarea {
     width: 100%;
     height: 120px;
     resize: none;
+
+    line-height: 1.17;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    padding: 8px 16px;
+
     
     margin-bottom: 16px;
 
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.comment-input:focus,
-.comment-input:hover {
-    border: 1px solid var(--iris);
+.comment-input:focus {
+    border-color: var(--iris);
 }
 
 .comment-input::placeholder {
     font-weight: 400;
     font-size: 12px;
-    line-height: 1.16667;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: var(--navy-blue-modal);
 
     position: absolute;
     top: 8px;
     left: 16px;
+}
+
+.accept-wrapper {
+    margin-bottom: 24px;
 }
 
 .modal-btn {
@@ -849,7 +863,6 @@ textarea {
     cursor: pointer;
     display: block;
 
-    margin-top: 24px;
     margin-left: 96px;
 
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
