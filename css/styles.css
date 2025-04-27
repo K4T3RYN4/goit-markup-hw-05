@@ -832,11 +832,6 @@ textarea {
     left: 16px;
 }
 
-.accept-wrapper {
-    display: flex;
-    gap: 8px;
-}
-
 .modal-btn {
     border-radius: 4px;
     padding: 16px 32px;
