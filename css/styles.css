@@ -862,6 +862,7 @@ textarea {
 .privacy-input:checked + .modal-label .custom-checkbox {
     background-color: var(--ocean);
     fill: var(--cloud);
+    border: none;
 }
 
 .modal-btn {
