@@ -856,9 +856,10 @@ textarea {
     align-items: center;
     justify-content: center;
     fill: transparent;
+    cursor: pointer;
 }
 
-.privacy-input:checked + .custom-checkbox {
+.privacy-input:checked + .modal-label .custom-checkbox {
     background-color: var(--ocean);
     fill: var(--cloud);
 }
